@@ -1,0 +1,249 @@
+#Version Check
+git --version
+
+#Folder Creation
+mkdir data_science_project
+
+#Open Folder
+cd data_science_project
+
+#Git Initialize
+git init -b main
+
+#User Name
+git config --global user.name "sandeepsivatutor"
+
+#User Email
+git config --global user.email "sandeepsivatutor12@gmail.com"
+
+#Config Check
+git config --global user.name
+git config --global user.email
+
+#Python File
+notepad analysis.py
+
+#Python Code
+# Type inside analyis.py and save:
+import pandas as pd
+
+data = {"Name": ["Asha", "Bala", "Charan"], "Score": [85, 90, 78]}
+df = pd.DataFrame(data)
+print(df)
+print("Average Score:", df["Score"].mean())
+
+#CSV File
+notepad students.csv
+
+#CSV Content
+# Type inside students.csv and save:
+Name,Score
+Asha,85
+Bala,90
+Charan,78
+
+#Readme File
+notepad README.md
+
+#Readme Content
+# Type inside README.md and save:
+# Data Science Project
+Basic Git and Python practice project.
+
+#Requirements File
+notepad requirements.txt
+
+#Requirements Content
+# Type inside requirements.txt and save:
+pandas
+
+#File Check
+ls
+
+#Git Status
+git status
+
+#Stage Files
+git add .
+
+#Stage Check
+git status
+
+#First Commit
+git commit -m "Add initial data science files"
+
+#Commit Log
+git log --oneline
+
+#GitHub Repository -- first create a repo in GitHub as the same name
+# GitHub -> + -> New repository -> data_science_project
+# Keep README, .gitignore and License unchecked -> Create repository
+# Copy the HTTPS URL
+
+#Remote Connect
+git remote add origin https://github.com/Bijayinee07/data_science_project.git
+
+#Remote Check
+git remote -v
+
+#First Push
+git push -u origin main
+
+#File Update
+notepad analysis.py
+
+#Updated Code
+# Add these lines and save:
+print("Maximum Score:", df["Score"].max())
+print("Minimum Score:", df["Score"].min())
+
+#Change Check
+git status
+
+#Difference Check
+git diff
+
+#Stage Update
+git add analysis.py
+
+#Update Commit
+git commit -m "Add score statistics"
+
+#Update Push
+git push
+
+#New Data
+notepad students.csv
+#CSV Update
+# Add this row and save:
+Divya,88
+
+#Stage Data
+git add students.csv
+
+#Data Commit
+git commit -m "Add new student data"
+
+#Push Data
+git push
+
+#Branch Create
+git switch -c visualization
+
+#Branch Check
+git branch
+
+#Chart File
+notepad chart.py
+
+#Chart Code
+# Type inside chart.py and save:
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("students.csv")
+df.plot(x="Name", y="Score", kind="bar")
+plt.show()
+
+#Requirement Update
+notepad requirements.txt
+
+#Requirement Content
+# Add this line and save:
+matplotlib
+
+#Branch Status
+git status
+
+#Stage Branch
+git add .
+
+#Branch Commit
+git commit -m "Add visualization feature"
+
+#Branch Push
+git push -u origin visualization
+
+#Main Branch
+git switch main
+
+#Merge Branch
+git merge visualization
+
+#Merge Push
+git push
+
+#Branch Delete
+git branch -d visualization
+
+#Latest Pull
+git pull origin main
+
+#Clone Project
+cd ..
+git clone https://github.com/YOUR_USERNAME/data_science_project.git
+
+#Clone Open
+cd data_science_project
+
+#Clone Status
+git status
+
+#Collaboration Setup
+# GitHub -> Repository -> Settings -> Collaborators -> Add people
+
+#Collaborator Pull
+git pull origin main
+
+#Collaborator Update
+notepad README.md
+
+#Collaborator Status
+git status
+
+#Collaborator Stage
+git add README.md
+
+#Collaborator Commit
+git commit -m "Update project documentation"
+
+#Collaborator Push
+git push origin main
+
+#Owner Pull
+git pull origin main
+
+#Cleaning Branch
+git switch -c data-cleaning
+
+#Cleaning File
+notepad cleaning.py
+
+#Cleaning Code
+# Type inside cleaning.py and save:
+import pandas as pd
+
+df = pd.read_csv("students.csv")
+df = df.dropna()
+print(df)
+
+#Stage Cleaning
+git add cleaning.py
+
+#Cleaning Commit
+git commit -m "Add data cleaning script"
+
+#Main Return
+git switch main
+
+#Merge Cleaning
+git merge data-cleaning
+
+#Final Push
+git push
+
+#History Check
+git log --oneline --graph --all
+
+#Final Status
+git status
