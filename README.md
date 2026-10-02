@@ -1,6 +1,2 @@
-Basic Git and Python practice project.
-
-
-
-
+Basic Git and Python practice project. It is very important.
 
